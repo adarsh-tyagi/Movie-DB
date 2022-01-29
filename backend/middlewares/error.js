@@ -28,5 +28,5 @@ module.exports = async (err, req, res, next) => {
     err = new ErrorHandler(message, 400);
   }
 
-  res.statusCode(err.statusCode).json({ success: false, message: err.message });
+  res.status(err.statusCode).json({ success: false, message: err.message });
 };
