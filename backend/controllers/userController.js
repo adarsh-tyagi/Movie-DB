@@ -8,6 +8,9 @@ const crypto = require("crypto");
 // register user
 exports.registerUser = catchAsyncError(async (req, res, next) => {
   const { name, email, password, gender } = req.body;
+  if (!name || !email || !password || !gender) {
+    return next(new ErrorHandler("Please provide all values", 400));
+  }
   const user = await User.create({
     name,
     email,
@@ -137,11 +140,13 @@ exports.removeMovie = catchAsyncError(async (req, res, next) => {
   if (!req.user.watchList.includes(movieId)) {
     return next(new ErrorHandler("Movie not in watchList", 400));
   }
-  req.user.watchList = req.user.watchList.filter((id) => id !== movieId);
+  req.user.watchList = req.user.watchList.filter(
+    (id) => String(id) !== String(movieId)
+  );
   await req.user.save();
   res.status(200).json({
     success: true,
-    message: "Movie removed from watchList",
+    message: "Removed from watchlist",
     watchList: req.user.watchList,
     count: req.user.watchList.length,
   });
