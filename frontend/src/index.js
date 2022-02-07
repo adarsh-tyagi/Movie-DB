@@ -12,12 +12,10 @@ const options = {
 };
 
 ReactDOM.render(
-  <React.StrictMode>
     <AppProvider>
       <AlertProvider template={AlertTemplate} {...options}>
         <App />
       </AlertProvider>
-    </AppProvider>
-  </React.StrictMode>,
+    </AppProvider>,
   document.getElementById("root")
 );

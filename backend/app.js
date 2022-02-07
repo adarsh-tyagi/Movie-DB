@@ -2,6 +2,7 @@ const express = require("express");
 const cors = require("cors");
 const errorMiddleware = require("./middlewares/error");
 const bodyParser = require("body-parser");
+const path = require("path")
 
 // user router
 const userRouter = require("./routes/userRoutes");
@@ -17,11 +18,12 @@ app.use(express.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(cors());
 
-app.get("/", (req, res) => {
-  res.send("This is movieDB backend.");
-});
-
 app.use("/api/v1/user", userRouter);
+
+app.use(express.static(path.join(__dirname, "../frontend/build")));
+app.get("*", (req, res) => {
+  res.sendFile(path.resolve(__dirname, "../frontend/build/index.html"));
+});
 
 app.use(errorMiddleware);
 
