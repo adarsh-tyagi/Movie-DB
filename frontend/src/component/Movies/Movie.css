@@ -1,0 +1,38 @@
+.movie__box {
+  max-width: 350px;
+  width: 95%;
+  position: relative;
+  margin-bottom: 1rem;
+  transition: 500ms;
+}
+.movie__box:hover {
+  transform: scale(1.05);
+}
+.movie__box > img {
+  width: 100%;
+  height: auto;
+}
+
+.movie__info {
+  position: absolute;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.822);
+  width: 100%;
+  padding: 0.5rem 0.75rem;
+  transition: 500ms;
+}
+
+.movie__info > h1 {
+  font-weight: bold;
+  font-size: 1.1rem;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  margin-bottom: 0.75rem;
+}
+.movie__info > p {
+  font-size: 0.9rem;
+}
+
+.null__image {
+  width: 350px !important;
+  height: 200.88px !important;
+}

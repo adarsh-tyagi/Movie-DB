@@ -2,6 +2,7 @@ import React, { Fragment } from "react";
 import { useGlobalContext } from "../../context";
 import Loader from "../Loader/Loader";
 import SearchMovies from "./SearchMovies";
+import "./Home.css"
 
 const Home = () => {
   const { loading, isAuthenticated } = useGlobalContext();
@@ -17,7 +18,7 @@ const Home = () => {
               <img src="/images/home.svg" alt="home_poster" />
               <h1>Sign in and search for movies</h1>
             </div>
-          ) : (
+          ) : ( 
             <SearchMovies />
           )}
         </div>

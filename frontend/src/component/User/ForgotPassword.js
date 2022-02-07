@@ -46,7 +46,7 @@ const ForgotPassword = () => {
       {loading ? (
         <Loader />
       ) : (
-        <div className="fp__container">
+        <div className="login__container">
           <form encType="multipart/form-data" onSubmit={submitHandler}>
             <div>
               <EmailIcon />

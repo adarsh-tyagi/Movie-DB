@@ -1,0 +1,53 @@
+.header {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.3rem 1rem;
+  background-color: black;
+  border-bottom: 3px solid #f2ed6f;
+}
+
+.header__left {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.header__left > svg {
+  width: 6rem;
+  height: 6rem;
+  fill: #f2ed6f;
+}
+.header__left > a {
+  font-size: 2rem;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.header__right {
+  margin-right: 1rem;
+}
+
+.header__right img {
+  width: 4rem;
+}
+.header__right  p {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-size: 1.2rem;
+}
+
+@media (max-width: 600px) {
+  .header__left > svg {
+    width: 4rem;
+    height: 4rem;
+  }
+  .header__left > a {
+    font-size: 1.5rem;
+  }
+  .header__right img {
+    width: 3rem;
+  }
+  .header__right  p {
+    font-size: 1rem;
+  }
+}

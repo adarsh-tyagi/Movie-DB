@@ -7,6 +7,7 @@ import { useGlobalContext } from "../../context";
 import { useAlert } from "react-alert";
 import { useNavigate, Link } from "react-router-dom";
 import Loader from "../Loader/Loader";
+import "./Login.css"
 
 const Login = () => {
   const {

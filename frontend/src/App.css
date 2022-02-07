@@ -5,9 +5,44 @@
     overflow-x: hidden;
 }
 
+::-webkit-scrollbar {
+  width: 7px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #000000;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: rgb(44, 42, 42);
+  border-radius: 15px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: rgb(66, 0, 97);
+}
+
 .container{
     min-height: 100vh;
     min-width: 100vw;
     background-color: #0f1213;
     color: white;
+}
+
+a{
+    text-decoration: none;
+    color: white;
+}
+
+.loading__msg{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    color: #fdf743;
+}
+
+.error__msg{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    color: #fd73df;
 }

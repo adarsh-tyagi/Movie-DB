@@ -1,0 +1,109 @@
+.movie__details {
+  /* margin-top: 2rem; */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.section__1 {
+  min-height: 100vh;
+  width: 100%;
+  margin: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.section__12 {
+  width: 100%;
+  height: 100vh;
+  /* background-color: rgba(0, 0, 0, 0.692); */
+  background-image: linear-gradient(
+    rgba(15, 18, 19, 0.2),
+    rgba(15, 18, 19, 0.692),
+    rgb(15, 18, 19)
+  );
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.section__12 > h1 {
+  color: #efb1ff;
+}
+
+.section__12 > h3 {
+  font-weight: normal;
+  font-size: 1.1rem;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+
+.section__121 {
+  align-self: flex-start;
+}
+
+.section__121 > p {
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+}
+
+.section__121 span {
+  font-weight: 500;
+  font-size: 1.2rem;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+  color: #f2ed6f;
+  margin-right: 0.5rem;
+}
+
+.section__121 small {
+  margin-right: 0.5rem;
+  background-color: #6e008a;
+  padding: 0 5px;
+  border-radius: 4px;
+  font-weight: normal !important;
+}
+
+.section__121 > button {
+  margin-top: 1rem;
+  outline: none;
+  background-color: transparent;
+  color: #f777f0;
+  cursor: pointer;
+  padding: 0.5rem 0.75rem;
+  font-size: 1.1rem;
+  border: 1px solid #fc7ff5;
+  transition: 500ms;
+}
+
+.section__121 > button:hover {
+  border: none;
+  text-shadow: 1px 0px 15px #ffa0fa;
+}
+
+.section__2 {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 2.5rem;
+  padding: 1rem;
+}
+.section__2 > h1 {
+  font-size: 2rem;
+  font-weight: 400;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  border-bottom: 2px solid white;
+  margin-bottom: 2rem;
+}
+
+.section__2 > div {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-evenly;
+}

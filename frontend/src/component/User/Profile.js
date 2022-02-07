@@ -4,6 +4,7 @@ import { useGlobalContext } from "../../context";
 import { Link, useNavigate } from "react-router-dom";
 import Loader from "../Loader/Loader";
 import MetaData from "../MetaData";
+import "./Profile.css";
 
 const Profile = () => {
   const {
@@ -30,7 +31,7 @@ const Profile = () => {
     navigate("/");
   };
 
-  useEffect(() => {
+  useEffect(() => { 
     if (error) {
       alert.error(error);
       clearError();

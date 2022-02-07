@@ -1,0 +1,45 @@
+.movie__container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem;
+}
+
+.movie__container > input{
+    margin: auto !important;
+    border: none;
+    outline: none;
+    max-width: 350px;
+    width: 95%;
+    background-color: transparent;
+    padding: 0.7rem 1.1rem;
+    font-size: 1.5rem;
+    font-weight: bold;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    border: 1px solid #c274c2;
+    color: #c468c7;
+}
+.movie__container > input:focus{
+    border: none;
+    border-bottom: 3px solid #ef74f3;
+}
+
+@media (max-width: 600px){
+    .movie__container > input{
+        padding: 0.5rem 0.8rem;
+        font-size: 1.1rem;
+    }
+}
+
+.movie__list{
+    padding: 1rem;
+    margin-top: 1.5rem;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-evenly
+}
+.movie__list > h1{
+    text-align: center;
+}

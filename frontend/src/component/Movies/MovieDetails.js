@@ -4,6 +4,7 @@ import { useParams } from "react-router-dom";
 import { useGlobalContext } from "../../context";
 import Loader from "../Loader/Loader";
 import Movie from "./Movie";
+import "./MovieDetails.css";
 
 const MovieDetails = () => {
   const { movieID } = useParams();
@@ -71,44 +72,51 @@ const MovieDetails = () => {
     <Fragment>
       {loadingData ? (
         <Loader />
-      ) : errorData ? (
-        <h1>Something went wrong! Try again</h1>
+      ) : errorData ? ( 
+        <h1 className="error__msg">Something went wrong! Try again</h1>
       ) : (
         <div className="movie__details">
-          <div className="section__1">
-            <div className="section__11">
-              <img
-                src={`https://image.tmdb.org/t/p/original${movie?.backdrop_path}`}
-                alt="movie_poster"
-              />
-            </div>
+          <div
+            className="section__1"
+            style={{
+              backgroundSize: "cover",
+              backgroundImage: `url("https://image.tmdb.org/t/p/original/${movie?.backdrop_path}")`,
+              backgroundPosition: "center center",
+            }}
+          >
+            {/* <img
+              src={`https://image.tmdb.org/t/p/original${movie?.backdrop_path}`}
+              alt="movie_poster"
+            /> */}
             <div className="section__12">
               <h1>{movie?.original_title}</h1>
-              <p>{movie?.overview}</p>
-              <p>
-                <span>Genres: </span>
-                {movie.genres &&
-                  movie?.genres.map((item) => (
-                    <small key={item?.id}>{item?.name}</small>
-                  ))}
-              </p>
-              <p>
-                <span>Release Date: </span>
-                {movie?.release_date}
-              </p>
-              <p>
-                <span>Runtime: </span>
-                {movie?.runtime} min.
-              </p>
-              <p>
-                <span>Rating: </span>
-                {movie?.vote_average}
-              </p>
-              <button onClick={clickHandler}>
-                {watchList.includes(movieID)
-                  ? "Already added"
-                  : "Add to Watchlist"}
-              </button>
+              <h3>{movie?.overview}</h3>
+              <div className="section__121">
+                <p>
+                  <span>Genres: </span>
+                  {movie.genres &&
+                    movie?.genres.map((item) => (
+                      <small key={item?.id}>{item?.name}</small>
+                    ))}
+                </p>
+                <p>
+                  <span>Release Date: </span>
+                  {movie?.release_date}
+                </p>
+                <p>
+                  <span>Runtime: </span>
+                  {movie?.runtime} min.
+                </p>
+                <p>
+                  <span>Rating: </span>
+                  {movie?.vote_average}
+                </p>
+                <button onClick={clickHandler}>
+                  {watchList.includes(movieID)
+                    ? "Already added"
+                    : "Add to Watchlist"}
+                </button>
+              </div>
             </div>
           </div>
 

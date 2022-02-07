@@ -4,6 +4,7 @@ import { useGlobalContext } from "../../context";
 import Loader from "../Loader/Loader";
 import MetaData from "../MetaData";
 import Movie from "./Movie";
+import "./WatchList.css";
 
 const WatchList = () => {
   const { watchList, error, message, clearError, clearMessage, removeMovie } =
@@ -55,11 +56,16 @@ const WatchList = () => {
       {loadingData ? (
         <Loader />
       ) : loadingError ? (
-        <h1>Something went wrong! Try again</h1>
+        <h1 className="error__msg">Something went wrong! Try again</h1>
       ) : (
-        <div>
+        <div className="watchlist">
           <h1>Your Watchlist</h1>
-          <div>
+          <div className="watchlist__movies">
+            {movieList.length === 0 ? (
+              <h1 className="error__msg">Nothing to show</h1>
+            ) : (
+              ""
+            )}
             {movieList.map((movie) => (
               <div key={movie.id}>
                 <Movie movie={movie} />

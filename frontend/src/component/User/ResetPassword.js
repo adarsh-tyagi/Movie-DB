@@ -50,7 +50,7 @@ const ResetPassword = () => {
       {loading ? (
         <Loader />
       ) : (
-        <div className="fp__container">
+        <div className="login__container">
           <form onSubmit={submitHandler}>
             <div>
               <PasswordIcon />

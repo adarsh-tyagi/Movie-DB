@@ -1,11 +1,12 @@
 import React, { useEffect, useState } from "react";
 import Movie from "./Movie";
+import "./SearchMovies.css";
 
 var url =
   "https://api.themoviedb.org/3/movie/popular?api_key=e8dce7da46844c6b013c0e835f59da30";
 
 const SearchMovies = () => {
-  const [name, setName] = useState("");
+  const [name, setName] = useState(""); 
   const [movies, setMovies] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(false);
@@ -30,7 +31,7 @@ const SearchMovies = () => {
 
   useEffect(() => {
     if (name) {
-      var url = `https://api.themoviedb.org/3/search/movie?api_key=e8dce7da46844c6b013c0e835f59da30&language=en-US&query=${name}&page=1&include_adult=true`;
+      var url = `https://api.themoviedb.org/3/search/movie?api_key=e8dce7da46844c6b013c0e835f59da30&language=en-US&query=${name}&page=1&include_adult=false`;
       fetchMovies(url);
     //   console.log(movies);
     }
@@ -44,9 +45,9 @@ const SearchMovies = () => {
       />
       <div className="movie__list">
         {error ? (
-          <h1>Something went wrong. Try again</h1>
+          <h1 className="error__msg">Something went wrong. Try again</h1>
         ) : loading ? (
-          <h1>Loading...</h1>
+          <h1 className="loading__msg">Loading...</h1>
         ) : (
           movies.map((movie) => <Movie key={movie.id} movie={movie} />)
         )}

@@ -10,7 +10,7 @@ const Header = ({ isAuthenticated, user }) => {
         <MovieFilterIcon />
         <Link to="/">MovieDB</Link>
       </div>
-      <div className="header_right">
+      <div className="header__right">
         {!isAuthenticated ? (
           <>
             <Link to="/signin">
@@ -21,7 +21,11 @@ const Header = ({ isAuthenticated, user }) => {
           <>
             <Link to="/profile">
               <img
-                  src={user.gender === "male" ? "/images/male.svg" : "/images/female.svg" }
+                src={
+                  user.gender === "male"
+                    ? "/images/male.svg"
+                    : "/images/female.svg"
+                }
                 alt="profile"
               />
             </Link>

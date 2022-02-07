@@ -1,0 +1,106 @@
+.login__container{
+    margin-top: 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.switch__btn{
+    max-width: 250px;
+    width: 90%;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.switch__btn > button{
+    border: none;
+    outline: none;
+    padding: 0.5rem 0.8rem;
+    cursor: pointer;
+    border-radius: 3px;
+    font-size: 1.1rem;
+    font-weight: bold;
+    color: #fff;
+    background-color: #964984;
+    transition: 300ms;
+}
+.switch__btn > button:hover{
+    background-color: #632752;
+}
+.active{
+    border-bottom: 4px solid #F2ED6F !important;
+}
+
+.login__container > form {
+  max-width: 90%;
+  width: 500px;
+  border: 2px solid #be82b0;
+  border-radius: 8px;
+  padding: 1rem;
+  margin-top: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.login__container > form > div {
+  border: 1px solid #292828;
+  background-color: rgb(48, 47, 47);
+  display: flex;
+  width: 100%;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 0.5rem;
+  margin: 0.7rem 0;
+}
+
+.login__container > form > div > svg {
+  color: #dd8ecb;
+  font-size: 2rem;
+  margin-right: 0.8rem;
+}
+
+.login__container > form > div > input, select, option {
+  width: 100%;
+  border: none;
+  outline: none;
+  background-color: rgb(48, 47, 47);
+  color: white;
+  font-size: 0.9rem;
+}
+
+.login__container > form > div > img{
+  width: 40px;
+  margin-right: 0.8rem;
+}
+
+.login__container > form > a {
+  margin-top: 1rem;
+  font-weight: normal;
+  font-size: 1rem;
+  transition: 750ms;
+  color: #F2ED6F;
+  font-family: monospace;
+}
+.login__container > form > a:hover {
+  text-decoration: underline;
+}
+
+.btn {
+  border: none;
+  outline: none;
+  background-color: #a0528e;
+  color: white;
+  font-size: 1rem;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  padding: 0.5rem 0.8rem;
+  border-radius: 3px;
+  cursor: pointer;
+  transition: 500ms;
+}
+.btn:hover {
+  background-color: #853371;
+}
