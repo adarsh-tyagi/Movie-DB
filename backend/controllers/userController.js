@@ -75,8 +75,10 @@ exports.forgotPassword = catchAsyncError(async (req, res, next) => {
   }
   const resetToken = await user.getResetPasswordToken();
   await user.save({ validateBeforeSave: false });
-  // const resetPasswordUrl = `${req.protocol}://${req.get("host")}/reset/password/${resetToken}`;
-  const resetPasswordUrl = `http://localhost:3000/reset/password/${resetToken}`;
+  const resetPasswordUrl = `${req.protocol}://${req.get(
+    "host"
+  )}/reset/password/${resetToken}`;
+  // const resetPasswordUrl = `http://localhost:3000/reset/password/${resetToken}`;
   try {
     const message = `You are receiving this email because you (or someone else) has requested the reset of a password.\nPlease make a PUT request to ${resetPasswordUrl} to reset your password.\n\nMovieDB Admin`;
     await sendMail({ email, subject: "Reset Password", message });
