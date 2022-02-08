@@ -16,6 +16,7 @@ const MovieDetails = () => {
   const [errorData, setErrorData] = useState(false);
   const [movie, setMovie] = useState({});
   const [similarMovies, setSimilarMovies] = useState([]);
+  const [imageShow, setImageShow] = useState(false);
 
   const clickHandler = () => {
     if (watchList.includes(movieID)) {
@@ -84,10 +85,6 @@ const MovieDetails = () => {
               backgroundPosition: "center center",
             }}
           >
-            {/* <img
-              src={`https://image.tmdb.org/t/p/original${movie?.backdrop_path}`}
-              alt="movie_poster"
-            /> */}
             <div className="section__12">
               <h1>{movie?.original_title}</h1>
               <h3>{movie?.overview}</h3>
