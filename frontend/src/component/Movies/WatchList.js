@@ -23,7 +23,7 @@ const WatchList = () => {
     try {
       for (let i = 0; i < watchList.length; i++) {
         const movieId = watchList[i];
-        const url = `https://api.themoviedb.org/3/movie/${movieId}?api_key=e8dce7da46844c6b013c0e835f59da30&language=en-US`;
+        const url = `https://api.themoviedb.org/3/movie/${movieId}?api_key=${process.env.REACT_APP_MOVIE_API_KEY}&language=en-US`;
         const response = await fetch(url);
         const data = await response.json();
         setMovieList((prevState) => [...prevState, data]);

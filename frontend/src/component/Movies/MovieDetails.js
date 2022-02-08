@@ -25,7 +25,7 @@ const MovieDetails = () => {
   };
 
   const fetchDetails = async (movieID) => {
-    const url = `https://api.themoviedb.org/3/movie/${movieID}?api_key=e8dce7da46844c6b013c0e835f59da30&language=en-US`;
+    const url = `https://api.themoviedb.org/3/movie/${movieID}?api_key=${process.env.REACT_APP_MOVIE_API_KEY}&language=en-US`;
     try {
       const response = await fetch(url);
       const data = await response.json();
@@ -39,7 +39,7 @@ const MovieDetails = () => {
   };
 
   const fetchSimilarMovies = async (movieID) => {
-    const url = `https://api.themoviedb.org/3/movie/${movieID}/similar?api_key=e8dce7da46844c6b013c0e835f59da30&page=1`;
+    const url = `https://api.themoviedb.org/3/movie/${movieID}/similar?api_key=${process.env.REACT_APP_MOVIE_API_KEY}&page=1`;
     try {
       const response = await fetch(url);
       const data = await response.json();

@@ -1,6 +1,7 @@
 import React, { useEffect, useReducer, useContext } from "react";
 import axios from "axios";
 import reducer from "./reducer";
+import { BACKEND_URL } from "./urls.js";
 const AppContext = React.createContext();
 
 const initialState = {
@@ -22,7 +23,7 @@ const AppProvider = ({ children }) => {
       dispatch({ type: "REGISTER_REQUEST" });
       const config = { headers: { "Content-Type": "application/json" } };
       const { data } = await axios.post(
-        "http://localhost:5000/api/v1/user/register",
+        `${BACKEND_URL}/register`,
         userdata,
         config
       );
@@ -41,7 +42,7 @@ const AppProvider = ({ children }) => {
       dispatch({ type: "LOGIN_REQUEST" });
       const config = { headers: { "Content-Type": "application/json" } };
       const { data } = await axios.post(
-        "http://localhost:5000/api/v1/user/login",
+        `${BACKEND_URL}/login`,
         userdata,
         config
       );
@@ -64,10 +65,7 @@ const AppProvider = ({ children }) => {
           Authorization: moviedbtoken,
         },
       };
-      const { data } = await axios.get(
-        "http://localhost:5000/api/v1/user",
-        config
-      );
+      const { data } = await axios.get(`${BACKEND_URL}`, config);
       // console.log("get user details", data);
       dispatch({ type: "USER_DETAILS_SUCCESS", payload: data });
     } catch (error) {
@@ -86,10 +84,7 @@ const AppProvider = ({ children }) => {
           Authorization: moviedbtoken,
         },
       };
-      const { data } = await axios.get(
-        "http://localhost:5000/api/v1/user/logout",
-        config
-      );
+      const { data } = await axios.get(`${BACKEND_URL}/logout`, config);
       localStorage.removeItem("moviedbtoken");
       // console.log("logout", data);
       dispatch({ type: "LOGOUT_SUCCESS", payload: data });
@@ -109,10 +104,7 @@ const AppProvider = ({ children }) => {
           Authorization: moviedbtoken,
         },
       };
-      const { data } = await axios.delete(
-        "http://localhost:5000/api/v1/user",
-        config
-      );
+      const { data } = await axios.delete(`${BACKEND_URL}`, config);
       localStorage.removeItem("moviedbtoken");
       // console.log("delete", data);
       dispatch({ type: "DELETE_USER_SUCCESS", payload: data });
@@ -131,7 +123,7 @@ const AppProvider = ({ children }) => {
       dispatch({ type: "FORGOT_PASSWORD_REQUEST" });
       const config = { headers: { "Content-Type": "application/json" } };
       const { data } = await axios.post(
-        "http://localhost:5000/api/v1/user/forgot/password",
+        `${BACKEND_URL}/forgot/password`,
         email,
         config
       );
@@ -149,7 +141,7 @@ const AppProvider = ({ children }) => {
       dispatch({ type: "RESET_PASSWORD_REQUEST" });
       const config = { headers: { "Content-Type": "application/json" } };
       const { data } = await axios.put(
-        `http://localhost:5000/api/v1/user/reset/password/${token}`,
+        `${BACKEND_URL}/reset/password/${token}`,
         { password, confirmPassword },
         config
       );
@@ -172,7 +164,7 @@ const AppProvider = ({ children }) => {
         },
       };
       const { data } = await axios.post(
-        "http://localhost:5000/api/v1/user/movie/add",
+        `${BACKEND_URL}/movie/add`,
         userdata,
         config
       );
@@ -195,7 +187,7 @@ const AppProvider = ({ children }) => {
         },
       };
       const { data } = await axios.post(
-        "http://localhost:5000/api/v1/user/movie/remove",
+        `${BACKEND_URL}/movie/remove`,
         userdata,
         config
       );
@@ -215,7 +207,7 @@ const AppProvider = ({ children }) => {
   // clear message
   const clearMessage = () => {
     dispatch({ type: "CLEAR_MESSAGE" });
-  }
+  };
 
   useEffect(() => {
     getUserDetails();
@@ -235,7 +227,7 @@ const AppProvider = ({ children }) => {
         addMovie,
         removeMovie,
         clearError,
-        clearMessage
+        clearMessage,
       }}
     >
       {children}

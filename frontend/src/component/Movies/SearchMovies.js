@@ -31,7 +31,7 @@ const SearchMovies = () => {
 
   useEffect(() => {
     if (name) {
-      var url = `https://api.themoviedb.org/3/search/movie?api_key=e8dce7da46844c6b013c0e835f59da30&language=en-US&query=${name}&page=1&include_adult=false`;
+      var url = `https://api.themoviedb.org/3/search/movie?api_key=${process.env.REACT_APP_MOVIE_API_KEY}&language=en-US&query=${name}&page=1&include_adult=false`;
       fetchMovies(url);
     //   console.log(movies);
     }
